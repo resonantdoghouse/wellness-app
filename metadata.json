@@ -1,0 +1,7 @@
+{
+  "name": "Lavender Wellness",
+  "description": "A calming mental health companion application featuring meditation tools, breathing exercises, emotional tracking, and AI-powered wellness advice.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

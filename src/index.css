@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply h-full bg-zen-bg;
+  }
+  html.dark {
+    @apply bg-zen-dark-bg;
+  }
+  body {
+    @apply h-full min-h-screen text-zen-text dark:text-zen-dark-text bg-zen-bg dark:bg-zen-dark-bg;
+  }
+  /* Custom scrollbar for a cleaner look */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-lavender-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-lavender-300 rounded-md;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-lavender-400;
+  }
+}
