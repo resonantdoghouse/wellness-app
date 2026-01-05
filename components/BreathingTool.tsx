@@ -74,7 +74,7 @@ const SettingsButton: React.FC<{
 }> = ({ onClick, activePatternName }) => (
   <button
     onClick={onClick}
-    className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 hover:border-white/30 transition-all duration-300 text-white shadow-sm hover:shadow-md"
+    className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 dark:bg-white/10 hover:bg-white/60 dark:hover:bg-white/20 backdrop-blur-md border border-slate-200/50 dark:border-white/10 hover:border-slate-300/50 dark:hover:border-white/30 transition-all duration-300 text-slate-700 dark:text-white shadow-sm hover:shadow-md"
   >
     <Settings
       size={14}
