@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Play, Pause, RotateCcw, Volume2, VolumeX } from "lucide-react";
+import { useDocumentTitle } from "../src/hooks/useDocumentTitle";
 
 import forestSound from "../src/assets/sounds/forest-ambience.mp3";
 import rainSound from "../src/assets/sounds/rain.ogg";
@@ -22,6 +23,7 @@ const BACKGROUNDS = {
 };
 
 export const MeditationTimer: React.FC = () => {
+  useDocumentTitle("Meditation Timer");
   const [duration, setDuration] = useState(10 * 60); // Default 10 mins
   const [timeLeft, setTimeLeft] = useState(10 * 60);
   const [isActive, setIsActive] = useState(false);

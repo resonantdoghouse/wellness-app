@@ -8,6 +8,7 @@ import {
   Wind,
   User,
 } from "lucide-react";
+import { useDocumentTitle } from "../src/hooks/useDocumentTitle";
 
 // --- Types ---
 
@@ -106,6 +107,7 @@ const IconButton: React.FC<{
 // --- Main Component ---
 
 export const BreathingTool: React.FC = () => {
+  useDocumentTitle("Breathing Tool");
   // State
   const [phase, setPhase] = useState<BreathingPhase>("ready");
   const [timeLeft, setTimeLeft] = useState(0);

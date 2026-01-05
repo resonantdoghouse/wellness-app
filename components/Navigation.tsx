@@ -28,6 +28,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentRoute }) => {
                 ? "text-purple-600 dark:text-purple-400"
                 : "text-slate-400 dark:text-slate-500 hover:text-purple-400 dark:hover:text-purple-300"
             }`}
+            aria-current={currentRoute === item.id ? "page" : undefined}
           >
             <item.icon
               size={24}
@@ -59,6 +60,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentRoute }) => {
                   ? "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 shadow-sm"
                   : "text-slate-500 dark:text-slate-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-600 dark:hover:text-purple-300"
               }`}
+              aria-current={currentRoute === item.id ? "page" : undefined}
             >
               <item.icon
                 size={20}

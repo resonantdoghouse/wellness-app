@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { EmotionCategory, EmotionData } from "../types";
 import { ArrowLeft } from "lucide-react";
+import { useDocumentTitle } from "../src/hooks/useDocumentTitle";
 
 const emotionsData: EmotionData[] = [
   {
@@ -123,6 +124,7 @@ const emotionsData: EmotionData[] = [
 ];
 
 export const EmotionSelector: React.FC = () => {
+  useDocumentTitle("Emotion Selector");
   const [selectedCategory, setSelectedCategory] = useState<EmotionData | null>(
     null
   );

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppRoute } from "../types";
 import { Wind, Timer, Heart } from "lucide-react";
+import { useDocumentTitle } from "../src/hooks/useDocumentTitle";
 
 const QUOTES = [
   "The best time for new beginnings is now.",
@@ -32,7 +33,7 @@ const QUOTES = [
 ];
 
 export const Home: React.FC = () => {
-  const navigate = useNavigate();
+  useDocumentTitle("Home");
   const [quote, setQuote] = useState("");
 
   const dateOptions: Intl.DateTimeFormatOptions = {
@@ -80,9 +81,9 @@ export const Home: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Main CTA */}
-        <div
-          onClick={() => navigate(AppRoute.BREATHE)}
-          className="col-span-1 md:col-span-2 lg:col-span-2 bg-gradient-to-br from-purple-600 to-indigo-600 dark:from-purple-700 dark:to-indigo-800 rounded-3xl p-8 text-white shadow-lg cursor-pointer transform transition-transform hover:scale-[1.01] flex flex-col justify-between min-h-[240px]"
+        <Link
+          to={AppRoute.BREATHE}
+          className="col-span-1 md:col-span-2 lg:col-span-2 bg-gradient-to-br from-purple-600 to-indigo-600 dark:from-purple-700 dark:to-indigo-800 rounded-3xl p-8 text-white shadow-lg cursor-pointer transform transition-transform hover:scale-[1.01] flex flex-col justify-between min-h-[240px] block"
         >
           <div>
             <div className="bg-white/20 w-fit px-3 py-1 rounded-full text-xs font-semibold mb-4 backdrop-blur-sm">
@@ -97,12 +98,12 @@ export const Home: React.FC = () => {
           <div className="flex items-center gap-2 font-semibold mt-6">
             <Wind /> Start Breathing Exercise
           </div>
-        </div>
+        </Link>
 
         {/* Quick Access Card - Meditate */}
-        <div
-          onClick={() => navigate(AppRoute.MEDITATE)}
-          className="bg-white dark:bg-zen-dark-card rounded-3xl p-6 shadow-sm border border-purple-50 dark:border-slate-800 cursor-pointer hover:shadow-md transition-all group"
+        <Link
+          to={AppRoute.MEDITATE}
+          className="bg-white dark:bg-zen-dark-card rounded-3xl p-6 shadow-sm border border-purple-50 dark:border-slate-800 cursor-pointer hover:shadow-md transition-all group block"
         >
           <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <Timer size={24} />
@@ -113,12 +114,12 @@ export const Home: React.FC = () => {
           <p className="text-slate-500 dark:text-slate-400 text-sm">
             Set a timer for your daily meditation practice.
           </p>
-        </div>
+        </Link>
 
         {/* Quick Access Card - Emotions */}
-        <div
-          onClick={() => navigate(AppRoute.EMOTIONS)}
-          className="bg-white dark:bg-zen-dark-card rounded-3xl p-6 shadow-sm border border-purple-50 dark:border-slate-800 cursor-pointer hover:shadow-md transition-all group"
+        <Link
+          to={AppRoute.EMOTIONS}
+          className="bg-white dark:bg-zen-dark-card rounded-3xl p-6 shadow-sm border border-purple-50 dark:border-slate-800 cursor-pointer hover:shadow-md transition-all group block"
         >
           <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <Heart size={24} />
@@ -129,7 +130,7 @@ export const Home: React.FC = () => {
           <p className="text-slate-500 dark:text-slate-400 text-sm">
             Use the emotion wheel to understand what you're feeling.
           </p>
-        </div>
+        </Link>
       </div>
 
       {/* Quote Section */}
